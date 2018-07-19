@@ -16,3 +16,4 @@ const router = new Router({
 })
 
 export default router
+// configure check eslint code quality in circleci
