@@ -2,7 +2,7 @@
 #FROM node:8.11.2-alpine as build-stage
 #COPY package*.json ./
 #RUN npm install
-#COPY . .
+COPY . .
 RUN npm run build
 
 # production stage
