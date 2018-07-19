@@ -1,0 +1,6 @@
+FROM nginx:alpine as production-stage
+LABEL author="Ravi Anand"
+COPY ./dist /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
+

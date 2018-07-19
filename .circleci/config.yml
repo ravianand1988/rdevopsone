@@ -18,6 +18,7 @@ jobs:
 
     steps:
       - checkout
+      - setup_remote_docker
 
       # Download and cache dependencies
       - restore_cache:
@@ -29,6 +30,10 @@ jobs:
       - run:
           npm install
           npm run build
+
+      - run:
+          command: |
+            docker build -t ravivuedemos.pub.doc/rdevopsone:1.0 .
 
       - save_cache:
           paths:

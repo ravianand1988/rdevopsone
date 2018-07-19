@@ -11,9 +11,9 @@ const router = new Router({
       path: '/',
       name: 'HelloWorld',
       component: HelloWorld
-
     }
   ]
 })
 
-export default   router
+export default router
+// configure check eslint code quality in circleci
