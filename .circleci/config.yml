@@ -39,8 +39,7 @@ jobs:
       - run:
           name: Push docker image to docker hub
           command: |
-            cd deploy
-            --file docker-compose-circleci.yml
+            - $DOCKER_HUB_TRIGGER
 
 
       - save_cache:
