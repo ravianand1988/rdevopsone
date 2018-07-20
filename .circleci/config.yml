@@ -36,11 +36,11 @@ jobs:
           command: |
             docker build -t ravivuedemos.pub.doc/rdevopsone:1.0 .
 
-      deployment:
-        dockerhub:
-          branch: develop
-          commands:
-            - $DOCKER_HUB_TRIGGER
+#      deployment:
+#        dockerhub:
+#          branch: develop
+#          commands:
+      - $DOCKER_HUB_TRIGGER
 
 
       - save_cache:
