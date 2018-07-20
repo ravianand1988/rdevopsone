@@ -37,12 +37,7 @@ jobs:
             docker build -t ravivuedemos.pub.doc/rdevopsone:1.0 .
           command: |
             $DOCKER_HUB_TRIGGER
-
-#      deployment:
-#        dockerhub:
-#          branch: develop
-#          commands:
-
+#            - $DOCKER_HUB_TRIGGER = curl -H "Content-Type:application/json" --data '{"build": true}' -X POST <TRIGGER_URL>
 
 
       - save_cache:
