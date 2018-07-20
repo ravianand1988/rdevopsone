@@ -32,8 +32,16 @@ jobs:
           npm run build
 
       - run:
+          name: Build docker image
           command: |
             docker build -t ravivuedemos.pub.doc/rdevopsone:1.0 .
+
+      - run:
+          name: Push docker image to docker hub
+          command: |
+            cd deploy
+            --file docker-compose-circleci.yml
+
 
       - save_cache:
           paths:

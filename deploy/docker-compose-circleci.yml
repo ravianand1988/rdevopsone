@@ -1,0 +1,5 @@
+deployment:
+  dockerhub:
+    branch: develop
+    commands:
+      - $DOCKER_HUB_TRIGGER
