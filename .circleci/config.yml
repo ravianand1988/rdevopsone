@@ -32,8 +32,18 @@ jobs:
           npm run build
 
       - run:
+          name: Build docker image
           command: |
             docker build -t ravivuedemos.pub.doc/rdevopsone:1.0 .
+          command: |
+            $DOCKER_HUB_TRIGGER
+
+#      deployment:
+#        dockerhub:
+#          branch: develop
+#          commands:
+
+
 
       - save_cache:
           paths:
