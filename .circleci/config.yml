@@ -37,10 +37,9 @@ jobs:
           name: Build docker image
           command: |
             cd dist
-            ls
             docker build -t ravivuedemos.pub.doc/rdevopsone:1.0 .
-#             docker login -u $DOCKER_USER -p $DOCKER_PASS
-#            docker push ravivuedemos.pub.doc/rdevopsone:1.0
+             docker login -u $DOCKER_USER -p $DOCKER_PASS
+            docker push ravivuedemos.pub.doc/rdevopsone:1.0
 #          command: |
 #            $DOCKER_HUB_TRIGGER
 #            - $DOCKER_HUB_TRIGGER = curl -H "Content-Type:application/json" --data '{"build": true}' -X POST <TRIGGER_URL>
