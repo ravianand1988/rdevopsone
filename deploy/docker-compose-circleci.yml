@@ -1,5 +1,6 @@
-deployment:
-  dockerhub:
-    branch: develop
-    commands:
-      - $DOCKER_HUB_TRIGGER
+version: '3'
+services:
+  tag-version:
+    build:
+      context: ../dist
+    image: "ravivuedemos.pub.doc/rdevopsone:1.0"
