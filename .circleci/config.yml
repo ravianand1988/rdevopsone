@@ -36,10 +36,13 @@ jobs:
       - run:
           name: Build docker image
           command: |
-            cd dist
-            docker build -t ravinbt/rdevopsone:1.0 .
+            cd deploy
+            docker-compose --file docker-compose-circleci.yml build
             docker login -u $DOCKER_USER -p $DOCKER_PASS
             docker push ravinbt/rdevopsone:1.0
+
+#            cd dist
+#            docker build -t ravinbt/rdevopsone:1.0 .
 #          command: |
 #            $DOCKER_HUB_TRIGGER
 #            - $DOCKER_HUB_TRIGGER = curl -H "Content-Type:application/json" --data '{"build": true}' -X POST <TRIGGER_URL>
