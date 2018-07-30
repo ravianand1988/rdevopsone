@@ -34,7 +34,7 @@ jobs:
       - run:
           name: Build docker image
           command: |
-            docker build -t ravivuedemos.pub.doc/rdevopsone:1.0 ../dist
+            docker build ./dist -t ravivuedemos.pub.doc/rdevopsone:1.0 .
 #             docker login -u $DOCKER_USER -p $DOCKER_PASS
 #            docker push ravivuedemos.pub.doc/rdevopsone:1.0
 #          command: |
