@@ -30,6 +30,8 @@ jobs:
       - run:
           npm install
           npm run build
+          command: |
+            ls
 
       - run:
           name: Build docker image
