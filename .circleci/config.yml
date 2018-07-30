@@ -39,10 +39,12 @@ jobs:
             cd deploy
             docker-compose --file docker-compose-circleci.yml build
             docker login -u $DOCKER_USER -p $DOCKER_PASS
-            docker push ravinbt/rdevopsone:1.0
+            docker push ravinbt/rdevopsone:1.1
 
 #            cd dist
 #            docker build -t ravinbt/rdevopsone:1.0 .
+#            docker login -u $DOCKER_USER -p $DOCKER_PASS
+#            docker push ravinbt/rdevopsone:1.0
 #          command: |
 #            $DOCKER_HUB_TRIGGER
 #            - $DOCKER_HUB_TRIGGER = curl -H "Content-Type:application/json" --data '{"build": true}' -X POST <TRIGGER_URL>

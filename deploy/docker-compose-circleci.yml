@@ -3,4 +3,4 @@ services:
   tag-version:
     build:
       context: ../dist
-    image: "ravivuedemos.pub.doc/rdevopsone:1.0"
+    image: "ravinbt/rdevopsone:1.1"
