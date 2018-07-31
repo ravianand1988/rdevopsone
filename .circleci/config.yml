@@ -21,7 +21,6 @@ default_steps:
       command: |
         docker login -u $DOCKER_USER -p $DOCKER_PASS
 
-workf;ow docker and aws ecs
 jobs:
   build:
     <<: *build_defaults
