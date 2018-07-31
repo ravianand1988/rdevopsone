@@ -4,3 +4,11 @@ services:
     build:
       context: ../dist
     image: "${REGISTRY}/${COMPOSE_PROJECT_NAME}:${VERSION}"
+  tag-build-num:
+    build:
+      context: ../dist
+    image: "${REGISTRY}/${COMPOSE_PROJECT_NAME}:build-${BUILD_NUM}"
+  tag-build-branch:
+    build:
+      context: ../dist
+    image: "${REGISTRY}/${COMPOSE_PROJECT_NAME}:${BUILD_BRANCH}"
