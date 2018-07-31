@@ -11,7 +11,7 @@ default_steps:
     run:
       name: Set BUILD_NUM, BUILD_BRANCH, VERSION
       command: |
-        chmod +x ./.circleci/set-build-attributes.sh
+        ./.circleci/set-build-attributes.sh
   setup_docker: &setup_docker
     setup_remote_docker:
       docker_layer_caching: false  # true when feature is enabled
@@ -21,7 +21,7 @@ default_steps:
       command: |
         docker login -u $DOCKER_USER -p $DOCKER_PASS
 
-
+workf;ow docker and aws ecs
 jobs:
   build:
     <<: *build_defaults
