@@ -52,7 +52,6 @@ jobs:
           command: |
             cd deploy
             docker-compose --file docker-compose-circleci.yml build
-#            docker login -u $DOCKER_USER -p $DOCKER_PASS
             docker-compose --file docker-compose-circleci.yml push
 
 #            cd dist
