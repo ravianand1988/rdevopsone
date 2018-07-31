@@ -14,7 +14,7 @@ default_steps:
     run:
       name: Set BUILD_NUM, BUILD_BRANCH, VERSION
       command: |
-        ./.circleci/set-build-attributes.sh
+        chmod +x ./.circleci/set-build-attributes.sh
   setup_docker: &setup_docker
     setup_remote_docker:
       docker_layer_caching: false  # true when feature is enabled
