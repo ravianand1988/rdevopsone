@@ -3,4 +3,4 @@ services:
   tag-version:
     build:
       context: ../dist
-    image: "ravinbt/rdevopsone:1.1"
+    image: "ravinbt/rdevopsone:1.2"

@@ -3,22 +3,36 @@
 # Check https://circleci.com/docs/2.0/language-javascript/ for more details
 #
 version: 2
+
+build_defaults: &build_defaults
+  docker:
+    - image: circleci/node:8.11.2
+  working_directory: ~/repo
+
+default_steps:
+  set_build_attributes: &set_build_attributes
+    run:
+      name: Set BUILD_NUM, BUILD_BRANCH, VERSION
+      command: |
+        ./.circleci/set-build-attributes.sh
+  setup_docker: &setup_docker
+    setup_remote_docker:
+      docker_layer_caching: false  # true when feature is enabled
+  login_to_dockerhub: &login_to_dockerhub
+    run:
+      name: Login to docker hub
+      command: |
+        docker login -u $DOCKER_USER -p $DOCKER_PASS
+
+
 jobs:
   build:
-    docker:
-      # specify the version you desire here
-      - image: circleci/node:8.11.2
-
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/mongo:3.4.4
-
-    working_directory: ~/repo
-
+    <<: *build_defaults
     steps:
       - checkout
-      - setup_remote_docker
+      - *set_build_attributes
+      - *setup_docker
+      - *login_to_dockerhub
 
       # Download and cache dependencies
       - restore_cache:
