@@ -63,7 +63,7 @@ workflows:
       - build:
           filters:
             tags:
-              only: /.*/
+              only: /^re-.*/
       # Push docker images on all branches and release tags
 #      - deploy:
 #          requires:
