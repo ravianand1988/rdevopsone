@@ -1,6 +1,6 @@
 {
   "name": "rdevopsone",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "A Vue.js project to explore and demonstrate using github, circleci, docker and cloud Azure or AWS.",
   "author": "Ravi Anand <ravianand1988@live.com>",
   "private": true,
