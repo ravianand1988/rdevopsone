@@ -62,6 +62,8 @@ workflows:
       # Build and test on all branches and tags
       - build:
           filters:
+            branches:
+              ignore: /.*/
             tags:
               only: /^re-.*/
       # Push docker images on all branches and release tags
